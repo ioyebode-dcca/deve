@@ -1,10 +1,6 @@
 // Jenkinsfile
 def awsCredentials = [[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'awsCredentials']]
 
-options {
-  withCredentials(awsCredentials)
-}
-
 pipeline {
     agent any
     stages {
