@@ -24,7 +24,7 @@ pipeline {
             steps {
                 script {
                   //withCredentials(awsCredentials)
-                    dir('develo')
+                    //dir('develo')
                     env.PATH += ":/usr/local/bin/"
                     ansiColor('xterm') {
                         sh 'pwd'
