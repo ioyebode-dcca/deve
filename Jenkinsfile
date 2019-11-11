@@ -1,6 +1,10 @@
 // Jenkinsfile
 def awsCredentials = [[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'awsCredentials']]
 
+options {
+  withCredentials(awsCredentials)
+}
+
 pipeline {
     agent any
     stages {
@@ -23,7 +27,7 @@ pipeline {
         stage ('Terraform init') {
             steps {
                 script {
-                  withCredentials(awsCredentials)
+                  //withCredentials(awsCredentials)
                     dir('develo')
                     env.PATH += ":/usr/local/bin/"
                     ansiColor('xterm') {
